@@ -3,14 +3,17 @@
 import { groq } from "next-sanity";
 import { client } from "./client";
 
-export async function getUser() {
+export async function getProperties() {
   return client.fetch(
-    groq`*[_type == "user"]{
+    groq`*[_type == "property"]{
       _id,
       name,
-      lastName,
-      email,
-      profileImage {alt, "image": asset->url},
+      address,
+      price,
+      size,
+      bedrooms,
+      bathrooms,
+      thumb {alt, "image": asset->url},
     }`
   );
 }

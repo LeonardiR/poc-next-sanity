@@ -1,6 +1,6 @@
 import { type SchemaTypeDefinition } from 'sanity'
-import user from './user'
+import properties from './schemas/properties'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [user],
+  types: [properties],
 }
